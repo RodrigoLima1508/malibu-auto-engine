@@ -1,99 +1,370 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 5%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
-
-    --primary: 0 75% 50%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 0 75% 60%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 75% 50%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 0 75% 50%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 75% 50%;
-  }
-
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 0 75% 55%;
-    --primary-foreground: 0 0% 95%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 75% 55%;
-    --accent-foreground: 0 0% 95%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 75% 55%;
-    
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 85%;
-    --sidebar-primary: 0 75% 55%;
-    --sidebar-primary-foreground: 0 0% 95%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 85%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 75% 55%;
-  }
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+header.show {
+    transform: translateY(0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+header .logo img {
+    max-width: 180px;
+    transition: transform 0.3s;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Menu Horizontal - Alterações principais aqui */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    display: inline-block;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/* Seção Hero */
+#hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#hero .logo-centralizada img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#hero .btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#hero .btn:hover {
+    background-color: #cc0000;
+}
+
+/* Seção Serviços */
+#servicos {
+    padding: 50px 20px;
+    background-color: #111;
+    text-align: center;
+}
+
+#servicos h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.servico {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    transition: transform 0.3s;
+}
+
+.servico:hover {
+    transform: scale(1.05);
+}
+
+.servico i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.servico h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1rem;
+}
+
+/* Seção Referências */
+#referencias {
+    padding: 50px 20px;
+    background-color: #000;
+    text-align: center;
+    position: relative;
+}
+
+#referencias h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carrossel-item img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.carrossel-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.carrossel-btn.anterior {
+    left: 10px;
+}
+
+.carrossel-btn.proximo {
+    right: 10px;
+}
+
+/* Seção Contato */
+#contato {
+    padding: 50px 20px;
+    background-color: #111;
+    text-align: center;
+}
+
+#contato h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+#contato p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.whatsapp-button,
+.instagram-button,
+.tiktok-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    color: #fff;
+}
+
+.instagram-button {
+    background-color: #E1306C;
+    color: #fff;
+}
+
+.tiktok-button {
+    background-color: #000;
+    color: #fff;
+}
+
+.whatsapp-button:hover,
+.instagram-button:hover,
+.tiktok-button:hover {
+    transform: scale(1.05);
+}
+
+/* Botão "Voltar ao Topo" */
+#voltarTopo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s ease-in-out;
+}
+
+#voltarTopo:hover {
+    background-color: #cc0000;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+}
+
+/* Responsividade - Alterações principais aqui */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Mantém horizontal */
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        flex-direction: row; /* Mantém horizontal */
+        gap: 10px;
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+        justify-content: center;
+    }
+
+    /* Restante mantido igual */
+    .servicos-container {
+        flex-direction: column;
+    }
+
+    .servico {
+        width: 100%;
+    }
+
+    .carrossel-container {
+        width: 100%;
+    }
+
+    .carrossel-item img {
+        max-height: 200px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+    }
 }

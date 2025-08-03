@@ -14,13 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admins: {
+        Row: {
+          created_at: string
+          id: string
+          senha: string
+          usuario: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          senha: string
+          usuario: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          senha?: string
+          usuario?: string
+        }
+        Relationships: []
+      }
+      orcamentos: {
+        Row: {
+          data_envio: string
+          id: string
+          mensagem: string
+          nome: string
+          servico: string
+          telefone: string
+        }
+        Insert: {
+          data_envio?: string
+          id?: string
+          mensagem: string
+          nome: string
+          servico: string
+          telefone: string
+        }
+        Update: {
+          data_envio?: string
+          id?: string
+          mensagem?: string
+          nome?: string
+          servico?: string
+          telefone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      verify_admin_credentials: {
+        Args: { p_usuario: string; p_senha: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never

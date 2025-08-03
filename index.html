@@ -1,24 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>malibu-auto-engine</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Malibu Automotiva - Excelência em pintura automotiva e personalização de veículos.">
+    <meta name="keywords" content="pintura automotiva, reparação de arranhões, personalização de veículos">
+    <title>Malibu Automotiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho (modifique esta parte) -->
+<header id="header">
+    <div class="logo">
+        <!-- Espaço para logo -->
+    </div>
+    
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#hero" class="nav-link">Início</a></li>
+            <li><a href="#servicos" class="nav-link">Serviços</a></li>
+            <li><a href="#referencias" class="nav-link">Referências</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+        
+        
+               
 
-    <meta property="og:title" content="malibu-auto-engine" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Seção Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="logo-centralizada">
+                <img src="logocentro.png" alt="Malibu Automotiva">
+            </div>
+            <h1>Malibu Reparação Automotiva</h1>
+            <p>Atendemos aos fins de semana e feriados mediante agendamento.</p>
+            <a href="#servicos" class="btn">Conheça nossos serviços</a>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+   <!-- Seção Serviços -->
+<section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="servicos-container">
+        <!-- Serviço 1 -->
+        <div class="servico">
+            <i class="fas fa-spray-can" title="Pistola de Pintura"></i>
+            <h3>Pintura Completa</h3>
+            <p>Pintura profissional para veículos, com acabamento impecável.</p>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="servico">
+            <i class="fas fa-car"></i>
+            <h3>Reparação de Arranhões</h3>
+            <p>Remoção de arranhões e imperfeições na pintura.</p>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="servico">
+            <i class="fas fa-tools"></i>
+            <h3>Polimento</h3>
+            <p>Tecnicas para proteção da pintura.</p>
+        </div>
+
+        <!-- Serviço 4 (Martelinho de Ouro) -->
+        <div class="servico">
+            <i class="fas fa-hammer" title="Martelinho de Ouro"></i>
+            <h3>Martelinho de Ouro</h3>
+            <p>Removemos amassados sem danificar a pintura original.</p>
+        </div>
+
+        <!-- Serviço 5 (Funilaria Artesanal) -->
+        <div class="servico">
+            <i class="fas fa-car-crash" style="color: #e74c3c;"></i>
+            <h3>Funilaria Artesanal</h3>
+            <p>Recuperamos a estrutura e aparência do seu veículo com técnicas detalhadas.</p>
+        </div>
+    </div> <!-- Fecha servicos-container -->
+</section>
+
+    <!-- Seção Referências -->
+<section id="referencias">
+    <h2>Referências</h2>
+    <div class="carrossel-container">
+        <div class="carrossel">
+
+            <div class="carrossel-item">
+                <img src="atualizar 1" alt="Referência 01">
+                <p>Pintura 01.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 2" alt="Referência 02">
+                <p>Referência 02.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 3" alt="Referência 03">
+                <p>Referência 03.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 4" alt="Referência 04">
+                <p>Referência 04.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 5" alt="Referência 05">
+                <p>Referência 05.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 5" alt="Referência 06">
+                <p>Referência 06.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 7" alt="Referência 07">
+                <p>Referência 07.</p>
+            </div>
+            <div class="carrossel-item">
+                <img src="atualizar 8" alt="Referência 08">
+                <p>Referência 08.</p>
+            </div>
+
+        </div> <!-- fecha .carrossel -->
+
+        <!-- botões fora da .carrossel -->
+        <button class="carrossel-btn anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="carrossel-btn proximo"><i class="fas fa-chevron-right"></i></button>
+    </div> <!-- fecha .carrossel-container -->
+</section>
+
+
+            <button class="carrossel-btn anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="carrossel-btn proximo"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações ou agendar um serviço.</p>
+
+        <div class="social-buttons">
+            <a href="https://wa.me/5511972439954" target="_blank" class="social-button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/flavio.malibu?igsh=MWdrNXZubmN3d2Vkcg==" target="_blank" class="social-button instagram-button">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@malibu1977lima?_t=ZM-8uMRp3MifET&_r=1" target="_blank" class="social-button tiktok-button">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+    </section>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button id="voltarTopo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Malibu Reparação Automotiva. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/flavio.malibu?igsh=MWdrNXZubmN3d2Vkcg=="><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/seufacebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/seuyoutube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
